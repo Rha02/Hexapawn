@@ -1,5 +1,22 @@
 def main():
-    input('enter:')
+    print('This is what each number move means in a board')
+    print('1 2 3\n4 5 6\n7 8 9\n')
+    print('This is what the board looks like at the start:')
+    print('2 2 2\n0 0 0\n1 1 1')
+    while True:
+        currentBoard = [
+            2, 2, 2,
+            0, 0, 0,
+            1, 1, 1
+        ]
+        playerMove = [int(i) for i in str(input('enter:'))]
+        if len(playerMove) != 2:
+            print('This is an invalid move!')
+            continue
+        if currentBoard[playerMove[0] - 1] != 1:
+            print('This is an invalid move!')
+            continue
+        print(playerMove)
 
 AImoves = [
     # AI's first moves:
@@ -110,216 +127,216 @@ AImoves = [
         [0, 2, 1],
         [1, 0, 0]
     ]},
-    {'id': 23, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 22, 'moves': [], 'board': [ # PLAYER WINS
         [1, 2, 0],
         [0, 0, 2],
         [1, 0, 1]
     ]},
-    {'id': 25, 'moves': [24, 25, 26], 'board': [
+    {'id': 23, 'moves': [24, 25, 26], 'board': [
         [0, 2, 2],
         [1, 0, 1],
         [1, 0, 0]
     ]},
-    {'id': 26, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 24, 'moves': [], 'board': [ # PLAYER WINS
         [0, 1, 2],
         [2, 0, 0],
         [1, 1, 0]
     ]},
-    {'id': 28, 'moves': [14, 15, 35], 'board': [
+    {'id': 25, 'moves': [14, 15, 35], 'board': [
         [2, 0, 2],
         [0, 1, 1],
         [0, 1, 0]
     ]},
-    {'id': 29, 'moves': [68, 69], 'board': [ # AI WINS
+    {'id': 26, 'moves': [68, 69], 'board': [ # AI WINS
         [2, 0, 2],
         [1, 0, 2],
         [0, 1, 0]
     ]},
-    {'id': 30, 'moves': [14, 15, 35, 69], 'board': [
+    {'id': 27, 'moves': [14, 15, 35, 69], 'board': [
         [2, 0, 2],
         [0, 1, 2],
         [1, 0, 0]
     ]},
-    {'id': 31, 'moves': [14], 'board': [ # AI WINS
+    {'id': 28, 'moves': [14], 'board': [ # AI WINS
         [2, 0, 2],
         [0, 0, 1],
         [1, 0, 0]
     ]},
     #--------------------------------------------------------
     # AI's third moves:
-    {'id': 32, 'moves': [35, 36, 47], 'board': [
+    {'id': 29, 'moves': [35, 36, 47], 'board': [
         [0, 0, 2],
         [2, 1, 0],
         [0, 0, 0]
     ]},
-    {'id': 33, 'moves': [47, 58], 'board': [ # AI WINS
+    {'id': 30, 'moves': [47, 58], 'board': [ # AI WINS
         [0, 0, 2],
         [2, 2, 1],
         [0, 0, 0]
     ]},
-    {'id': 34, 'moves': [15, 47], 'board': [ # AI WINS
+    {'id': 31, 'moves': [15, 47], 'board': [ # AI WINS
         [2, 0, 0],
         [2, 1, 0],
         [0, 0, 0]
     ]},
-    {'id': 35, 'moves': [47, 58], 'board': [ # AI WINS
+    {'id': 32, 'moves': [47, 58], 'board': [ # AI WINS
         [2, 0, 0],
         [2, 2, 1],
         [0, 0, 0]
     ]},
-    {'id': 36, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 33, 'moves': [], 'board': [ # PLAYER WINS
         [1, 0, 0],
         [2, 0, 2],
         [0, 0, 1]
     ]},
-    {'id': 37, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 34, 'moves': [], 'board': [ # PLAYER WINS
         [2, 1, 0],
         [2, 0, 2],
         [0, 0, 1]
     ]},
-    {'id': 38, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 35, 'moves': [], 'board': [ # PLAYER WINS
         [1, 0, 2],
         [0, 2, 0],
         [0, 1, 0]
     ]},
-    {'id': 39, 'moves': [15], 'board': [
+    {'id': 36, 'moves': [15], 'board': [
         [2, 0, 0],
         [1, 1, 1],
         [0, 0, 0]
     ]},
-    {'id': 40, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 37, 'moves': [], 'board': [ # PLAYER WINS
         [2, 1, 0],
         [1, 0, 2],
         [0, 1, 0]
     ]},
-    {'id': 41, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 38, 'moves': [], 'board': [ # PLAYER WINS
         [1, 2, 0],
         [0, 2, 2],
         [0, 0, 1]
     ]},
-    {'id': 42, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 39, 'moves': [], 'board': [ # PLAYER WINS
         [0, 1, 0],
         [0, 2, 2],
         [0, 0, 1]
     ]},
-    {'id': 43, 'moves': [24, 69], 'board': [
+    {'id': 40, 'moves': [24, 69], 'board': [
         [0, 2, 0],
         [1, 1, 2],
         [0, 0, 0]
     ]},
-    {'id': 46, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 41, 'moves': [], 'board': [ # PLAYER WINS
         [2, 0, 1],
         [2, 0, 0],
         [0, 0, 1]
     ]},
-    {'id': 47, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 42, 'moves': [], 'board': [ # PLAYER WINS
         [2, 0, 1],
         [1, 2, 0],
         [0, 0, 1]
     ]},
-    {'id': 49, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 43, 'moves': [], 'board': [ # PLAYER WINS
         [0, 0, 1],
         [2, 0, 2],
         [1, 0, 0]
     ]},
-    {'id': 50, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 44, 'moves': [], 'board': [ # PLAYER WINS
         [0, 1, 2],
         [2, 0, 2],
         [1, 0, 0]
     ]},
-    {'id': 51, 'moves': [26, 47], 'board': [
+    {'id': 45, 'moves': [26, 47], 'board': [
         [0, 2, 0],
         [2, 1, 1],
         [0, 0, 0]
     ]},
-    {'id': 52, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 46, 'moves': [], 'board': [ # PLAYER WINS
         [0, 1, 0],
         [2, 2, 0],
         [1, 0, 0]
     ]},
-    {'id': 53, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 47, 'moves': [], 'board': [ # PLAYER WINS
         [0, 2, 1],
         [2, 2, 0],
         [1, 0, 0]
     ]},
-    {'id': 59, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 48, 'moves': [], 'board': [ # PLAYER WINS
         [0, 2, 0],
         [0, 1, 0],
         [0, 0, 0]
     ]},
-    {'id': 60, 'moves': [26, 58], 'board': [ # AI WINS
+    {'id': 49, 'moves': [26, 58], 'board': [ # AI WINS
         [0, 2, 0],
         [0, 2, 1],
         [0, 0, 0]
     ]},
-    {'id': 61, 'moves': [24, 58], 'board': [ # AI WINS
+    {'id': 50, 'moves': [24, 58], 'board': [ # AI WINS
         [0, 2, 0],
         [1, 2, 0],
         [0, 0, 0]
     ]},
-    {'id': 64, 'moves': [58, 69], 'board': [ # AI WINS
+    {'id': 51, 'moves': [58, 69], 'board': [ # AI WINS
         [0, 0, 2],
         [1, 2, 2],
         [0, 0, 0]
     ]},
-    {'id': 65, 'moves': [35, 69], 'board': [ # AI WINS
+    {'id': 52, 'moves': [35, 69], 'board': [ # AI WINS
         [0, 0, 2],
         [0, 1, 2],
         [0, 0, 0]
     ]},
-    {'id': 76, 'moves': [58, 69], 'board': [ # AI WINS
+    {'id': 53, 'moves': [58, 69], 'board': [ # AI WINS
         [2, 0, 0],
         [1, 2, 2],
         [0, 0, 0]
     ]},
-    {'id': 77, 'moves': [14, 15, 69], 'board': [
+    {'id': 54, 'moves': [14, 15, 69], 'board': [
         [2, 0, 0],
         [0, 1, 2],
         [0, 0, 0]
     ]},
-    {'id': 88, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 55, 'moves': [], 'board': [ # PLAYER WINS
         [1, 0, 2],
         [0, 2, 1],
         [1, 0, 0]
     ]},
-    {'id': 89, 'moves': [35], 'board': [
+    {'id': 56, 'moves': [35], 'board': [
         [0, 0, 2],
         [1, 1, 1],
         [0, 0, 0]
     ]},
-    {'id': 90, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 57, 'moves': [], 'board': [ # PLAYER WINS
         [1, 0, 2],
         [0, 0, 2],
         [1, 0, 0]
     ]},
-    {'id': 92, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 58, 'moves': [], 'board': [ # PLAYER WINS
         [0, 1, 2],
         [2, 0, 1],
         [0, 1, 0]
     ]},
-    {'id': 93, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 59, 'moves': [], 'board': [ # PLAYER WINS
         [0, 0, 1],
         [2, 0, 1],
         [0, 1, 0]
     ]},
-    {'id': 94, 'moves': [], 'board': [ # PLAYER WINS
+    {'id': 60, 'moves': [], 'board': [ # PLAYER WINS
         [2, 0, 1],
         [0, 2, 0],
         [0, 1, 0]
     ]},
     #--------------------------------------------------------
     # AI's fourth moves, AI's losing board:
-    {'id': 101, 'moves': [], 'board': [
+    {'id': 61, 'moves': [], 'board': [
         [0, 1, 0],
         [2, 0, 2],
         [0, 0, 0]
     ]},
-    {'id': 102, 'moves': [], 'board': [
+    {'id': 62, 'moves': [], 'board': [
         [1, 0, 0],
         [0, 2, 1],
         [0, 0, 0]
     ]},
-    {'id': 103, 'moves': [], 'board': [
+    {'id': 63, 'moves': [], 'board': [
         [0, 0, 1],
         [1, 2, 0],
         [0, 0, 0]

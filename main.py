@@ -1,22 +1,48 @@
+def validateMove(playerMove, currentBoard):
+    if len(playerMove) != 2:
+        return False
+    if currentBoard[playerMove[0] - 1] != 1:
+        return False
+    if playerMove[0] <= playerMove[1] or playerMove[0] > playerMove[1] + 4:
+        return False
+    if playerMove[0] in [7, 4]:
+        if playerMove[1] == playerMove[0] - 2 and currentBoard[playerMove[1] - 1] != 2:
+            return False
+        elif playerMove[1] in [6, 3]:
+            return False
+    elif playerMove[0] in [8, 5]:
+        if playerMove[1] == playerMove[0] - 4 and currentBoard[playerMove[1] - 1] != 2:
+            return False
+        elif playerMove[1] == playerMove[0] - 2 and currentBoard[playerMove[1] - 1] != 2:
+            return False
+        elif playerMove[1] == playerMove[0] - 1:
+            return False
+    else: # playerMove[0] in [9, 6]
+        if playerMove[1] == playerMove[0] - 4 and currentBoard[playerMove[1] - 1] != 2:
+            return False
+        elif playerMove[1] >= playerMove[0] - 2:
+            return False
+    if playerMove[1] == playerMove[0] - 3 and currentBoard[playerMove[1] - 1] != 0:
+        return False
+    return True
+
 def main():
     print('This is what each number move means in a board')
     print('1 2 3\n4 5 6\n7 8 9\n')
     print('This is what the board looks like at the start:')
     print('2 2 2\n0 0 0\n1 1 1')
     while True:
-        currentBoard = [
-            2, 2, 2,
-            0, 0, 0,
-            1, 1, 1
-        ]
-        playerMove = [int(i) for i in str(input('enter:'))]
-        if len(playerMove) != 2:
-            print('This is an invalid move!')
-            continue
-        if currentBoard[playerMove[0] - 1] != 1:
-            print('This is an invalid move!')
-            continue
-        print(playerMove)
+        try:
+            currentBoard = [
+                0, 2, 0,
+                2, 0, 2,
+                1, 1, 1
+            ]
+            playerMove = [int(i) for i in str(input('enter:'))]
+            isValid = validateMove(playerMove, currentBoard)
+            print(isValid)
+        except Exception as e:
+            print(e)
 
 AImoves = [
     # AI's first moves:

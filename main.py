@@ -43,6 +43,7 @@ def main():
         0, 0, 0,
         1, 1, 1
     ]
+    AIprevMoves = []
     while True:
         try:
             playerMove = [int(i) for i in str(input('enter:'))]
@@ -65,20 +66,50 @@ def main():
                     0, 0, 0,
                     1, 1, 1
                 ]
+                AImoves[AIprevMoves[-1].get('id') - 1]['moves'].remove(AIprevMoves[-1].get('move'))
+                if not AImoves[AIprevMoves[-1].get('id') - 1]['moves']:
+                    AImoves[AIprevMoves[-2].get('id') - 1]['moves'].remove(AIprevMoves[-2].get('move'))
+                AIprevMoves = []
+                print('This is what the board looks like right now:')
+                print('2 2 2\n0 0 0\n1 1 1')
+                continue
             move = [int(i) for i in str(random.choice(AImove.get('moves')))]
             currentBoard[move[0] - 1] = 0
             currentBoard[move[1] - 1] = 2
+            AIprevMoves.append({
+                'id': AImove.get('id'),
+                'move': int(''.join([str(n) for n in move]))
+            })
             printCurrentBoard(currentBoard)
-            if 2 in currentBoard[6:]:
+            if 2 in currentBoard[6:] or 1 not in currentBoard:
                 print('\nTHE AI WON!\n')
                 currentBoard = [
                     2, 2, 2,
                     0, 0, 0,
                     1, 1, 1
                 ]
+                AIprevMoves = []
+                print('This is what the board looks like right now:')
+                print('2 2 2\n0 0 0\n1 1 1')
+                continue
+            for n in possiblePlayerMoves:
+                if validateMove(n, currentBoard):
+                    break
+            else:
+                print('\nTHE AI WON!\n')
+                currentBoard = [
+                    2, 2, 2,
+                    0, 0, 0,
+                    1, 1, 1
+                ]
+                AIprevMoves = []
+                print('This is what the board looks like right now:')
+                print('2 2 2\n0 0 0\n1 1 1')
+                continue
         except Exception as e:
             print(e)
 
+possiblePlayerMoves = [[7, 4], [7, 5], [8, 4], [8, 5], [8, 6], [9, 5], [9,  6], [4, 1], [4, 2], [5, 1], [5, 2], [5, 3], [6, 2], [6, 3]]
 AImoves = [
     # AI's first moves:
     {'id': 1, 'moves': [24, 25, 36], 'board': [

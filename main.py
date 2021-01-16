@@ -1,9 +1,13 @@
+import random
+
 def validateMove(playerMove, currentBoard):
     if len(playerMove) != 2:
         return False
     if currentBoard[playerMove[0] - 1] != 1:
         return False
     if playerMove[0] <= playerMove[1] or playerMove[0] > playerMove[1] + 4:
+        return False
+    if playerMove[1] == playerMove[0] - 3 and currentBoard[playerMove[1] - 1] != 0:
         return False
     if playerMove[0] in [7, 4]:
         if playerMove[1] == playerMove[0] - 2 and currentBoard[playerMove[1] - 1] != 2:
@@ -22,25 +26,56 @@ def validateMove(playerMove, currentBoard):
             return False
         elif playerMove[1] >= playerMove[0] - 2:
             return False
-    if playerMove[1] == playerMove[0] - 3 and currentBoard[playerMove[1] - 1] != 0:
-        return False
     return True
+
+def printCurrentBoard(board):
+    print(board[0], board[1], board[2])
+    print(board[3], board[4], board[5])
+    print(board[6], board[7], board[8])
 
 def main():
     print('This is what each number move means in a board')
     print('1 2 3\n4 5 6\n7 8 9\n')
-    print('This is what the board looks like at the start:')
+    print('This is what the board looks like right now:')
     print('2 2 2\n0 0 0\n1 1 1')
+    currentBoard = [
+        2, 2, 2,
+        0, 0, 0,
+        1, 1, 1
+    ]
     while True:
         try:
-            currentBoard = [
-                0, 2, 0,
-                2, 0, 2,
-                1, 1, 1
-            ]
             playerMove = [int(i) for i in str(input('enter:'))]
-            isValid = validateMove(playerMove, currentBoard)
-            print(isValid)
+            if not validateMove(playerMove, currentBoard):
+                print('Invalid input')
+                continue
+            currentBoard[playerMove[0] - 1] = 0
+            currentBoard[playerMove[1] - 1] = 1
+            print('\nYour Move:\n')
+            printCurrentBoard(currentBoard)
+            print('\nAI Move:\n')
+            for move in AImoves:
+                if move.get('board') == currentBoard:
+                    AImove = move
+            if not AImove.get('moves'):
+                print('\nTHE PLAYER WON!\n')
+                print('AI gets smarter.')
+                currentBoard = [
+                    2, 2, 2,
+                    0, 0, 0,
+                    1, 1, 1
+                ]
+            move = [int(i) for i in str(random.choice(AImove.get('moves')))]
+            currentBoard[move[0] - 1] = 0
+            currentBoard[move[1] - 1] = 2
+            printCurrentBoard(currentBoard)
+            if 2 in currentBoard[6:]:
+                print('\nTHE AI WON!\n')
+                currentBoard = [
+                    2, 2, 2,
+                    0, 0, 0,
+                    1, 1, 1
+                ]
         except Exception as e:
             print(e)
 

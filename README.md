@@ -1,5 +1,5 @@
 # Hexapawn
-Hexapawn is a simple game used to demonstrate machine learning.
+Hexapawn is a simple game  created by Martin Gardner that's used to demonstrate machine learning.
 The game is a 3x3 grid, with 3 pawns on top and bottom. The pawns on top belong to the AI, while the pawns on the bottom belong to the player.
 
 ## The Game

@@ -39,6 +39,6 @@ The player moves first. A valid move for the player, would be for example move '
 </pre>
 
 ## Machine Learning
-The AI is initially dumb, and it makes **random choices**. The AI looks at the current board, checks for possible moves, and using the Python's "random" module, it chooses a random move from the possible moves that it could make. **Once the AI loses to the player, AI's previous move is removed from the list of possible moves it could make**. In other words, the AI won't make the same mistake again, unless the player decides to exit the application. If the AI is victories, it doesn't anyhow impact its possible moves.
+The AI is initially dumb, and it makes **random choices**. The AI looks at the current board, checks for possible moves, and using the Python's "random" module, it chooses a random move from the possible moves that it could make. **Once the AI loses to the player, AI's previous move is removed from the list of possible moves it could make**. In other words, the AI won't make the same mistake again, unless the player decides to exit the application. If the AI is victorious, it doesn't anyhow impact its possible moves.
 
 As the player continues playing and winning, the AI's moves become tougher and more challenging. It will be obvious to the player, as the AI becomes more proficient at the game.

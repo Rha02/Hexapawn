@@ -1,6 +1,5 @@
 # Hexapawn
-Hexapawn is a simple game  created by Martin Gardner that's used to demonstrate machine learning.
-The game is a 3x3 grid, with 3 pawns on top and bottom. The pawns on top belong to the AI, while the pawns on the bottom belong to the player.
+Hexapawn is a simple game that's used to demonstrate machine learning. It's created and portrayed by Martin Gardner in his book titled *The Unexpected Hanging and Other Mathematical Diversions*. The game is a 3x3 mini-chess, with 3 pawns on top and bottom. 
 
 ## The Game
 The rules of the game are simple:
@@ -8,7 +7,7 @@ The rules of the game are simple:
 2. Go one tile forward if there is nothing ahead. Or take out opponent's piece if it is in a diagonally neighboring tile.
 3. To win, you must either take out all your opponent's pawns, put your opponent at a stalemate, or have your pawn reach the opponent's side of the board.
 
-In my app's scenario, the player's pawns are represented by the digit '1', the opponent's pawns are represented by the digin '2', and the empty tiles are represented by the digit '0'.
+The pawns on top belong to the AI, while the pawns on the bottom belong to the player. In my app's scenario, the player's pawns are represented by the digit '1', the opponent's pawns are represented by the digin '2', and the empty tiles are represented by the digit '0'.
 
 For the player to move their pawn, they must enter a two digit number. The first digit indicates which pawn the player wishes to move, and the second digit indicates where the player wants to move that pawn.
 
